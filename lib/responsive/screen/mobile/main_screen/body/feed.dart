@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+/*
+  Pada body item Feed ini berisi widget container dengan ALignment center, 
+  lalu didisik dengan widget Text()
+ */
 
 class FeedBody extends StatelessWidget {
   const FeedBody({super.key});

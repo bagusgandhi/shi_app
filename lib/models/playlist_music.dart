@@ -1,3 +1,6 @@
+
+// buat class PLaylistMusic,dengan property title, color, dan subtitle
+
 class PlaylistMusic {
   String title;
   String color;
@@ -9,6 +12,8 @@ class PlaylistMusic {
     required this.subtitle,
   });
 }
+
+// buat list dummy data dari class PLaylistMusic diatas
 
 List<PlaylistMusic> playlist = [
   PlaylistMusic(

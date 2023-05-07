@@ -1,8 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:shi_app/models/playlist_music.dart';
+
+/*
+  Pada body item Home ini menggunakan ScrollVIew agar dapat di scroll
+  lalu didalamnya terdapat widget ListVIew untuk menampilkan data dummy playlist
+
+  
+ */
 
 class HomeBodyDesktop extends StatelessWidget {
   const HomeBodyDesktop({super.key});

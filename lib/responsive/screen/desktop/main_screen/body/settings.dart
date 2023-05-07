@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+/*
+  Pada body item Search ini berisi widget container dengan ALignment center, 
+  lalu di isi dengan widget Text()
+ */
 
 class SettingsBodyDesktop extends StatelessWidget {
   const SettingsBodyDesktop({super.key});
@@ -9,7 +12,7 @@ class SettingsBodyDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text(
+      child: const Text(
         'Settings',
         style: TextStyle(
           fontWeight: FontWeight.bold,

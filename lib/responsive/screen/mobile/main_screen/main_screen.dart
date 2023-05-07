@@ -30,7 +30,10 @@ class _MainScreenState extends State<MainScreen> {
     const SettingsBody(),
   ];
 
-  /* */
+  /*
+  pada MainScreen device mobile ini terdapat widget scaffold. Di dalam widget scaffold terdapat
+  appBar, bottomNavigationBar, dan body. 
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +41,15 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Row(
           children: [
+
+            // pada text title di appBar ini akan muncul sesuai title pada navigasi itemnya 
             Text(_title[_selectedIndex]),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+
+                  // button ini digunakan untuk menaampilkan screen lain apabila di klik
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -78,9 +85,15 @@ class _MainScreenState extends State<MainScreen> {
         ),
         backgroundColor: Colors.black,
       ),
+
+      /* ini adalah widget BottomNavigationBar() terdapat 5 item navigasi 
+        label navigasinya sesuai dari List data _title diatas
+      */ 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {
+
+          // ketika item navigasi di klik, maka ubah _selectedIndex suai dari index data item yang di klik
           setState(() {
             _selectedIndex = index;
             print(_selectedIndex);
@@ -114,6 +127,12 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: Colors.grey[600],
       ),
       backgroundColor: Colors.black,
+
+      /* 
+        Karena item2 lain masih menggunakan template screen yang sama
+        untuk mengubah body pada item ketika di klik dapat menggunakan widget IndexedStack()
+      */
+
       body: IndexedStack(
         index: _selectedIndex,
         children: _body,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+/*
+  Pada body item Library ini berisi widget container dengan ALignment center, 
+  lalu di isi dengan widget Text()
+ */
 
 class LibraryBodyDesktop extends StatelessWidget {
   const LibraryBodyDesktop({super.key});
@@ -9,7 +12,7 @@ class LibraryBodyDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text(
+      child: const Text(
         'Your Music Library',
         style: TextStyle(
           fontWeight: FontWeight.bold,

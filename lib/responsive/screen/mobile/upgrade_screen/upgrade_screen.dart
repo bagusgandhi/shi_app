@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+/*
+  ini adalah tampilan screen ketika tombol upgrade pada appbar di klik
+  karena sudah berbeda screen dengan main screen, buat scaffol widget lagi
+  lalu isi dengan Container yang didalamnya berisi column.
+  didalam column terdiri dari Image, dan Text
+*/
 
 class UpgradeScreen extends StatelessWidget {
   const UpgradeScreen({super.key});
@@ -45,9 +50,9 @@ class UpgradeScreen extends StatelessWidget {
               height: 15,
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.black,
                 ),
                 padding: const EdgeInsets.all(16),
@@ -56,7 +61,7 @@ class UpgradeScreen extends StatelessWidget {
                     Image.network(
                       'https://i1.sndcdn.com/avatars-7OeqzUtGCKkSS8XQ-gREwqg-t240x240.jpg',
                     ),
-                    Text(
+                    const Text(
                       "What's next in music is first on CloudSound",
                       style: TextStyle(
                         color: Colors.white,
@@ -65,7 +70,7 @@ class UpgradeScreen extends StatelessWidget {
                         height: 1.6,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Upgrading your CloudSound account is an excellent way to take your music career to the next level.",
                       style: TextStyle(
                         color: Colors.white,

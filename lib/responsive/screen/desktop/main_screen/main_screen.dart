@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:shi_app/responsive/screen/desktop/main_screen/body/feed.dart';
 import 'package:shi_app/responsive/screen/desktop/main_screen/body/home.dart';
 import 'package:shi_app/responsive/screen/desktop/main_screen/body/library.dart';
@@ -15,8 +13,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  // buat variable _selectedIndex untuk menampung index navigasi item yang di klik
   int _selectedIndex = 0;
+  // buat _tite label untuk item navigasi
   final List<String> _title = ['Home', 'Feed', 'Search', 'Library', 'Settings'];
+
+  // buat LIst data body yang akan ditampilkan
   final List<Widget> _body = [
     const HomeBodyDesktop(),
     const FeedBodyDesktop(),
@@ -25,6 +27,10 @@ class _MainScreenState extends State<MainScreen> {
     const SettingsBodyDesktop(),
   ];
 
+/*
+  Pada tampilan desktop ini juga terdapat appBar, untuk navigasinya menggunakan
+  widget NavigationRail() yang akan tampil di samping.
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +45,7 @@ class _MainScreenState extends State<MainScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  // pada button upgrade saat di klik akan menampilkan popup dialog
                   ElevatedButton(
                     onPressed: () {
                       showDialog(
@@ -46,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
                         builder: (BuildContext context) {
                           return AlertDialog(
                             backgroundColor: Colors.deepPurple,
-                            title: Text(
+                            title: const Text(
                               "Upgrade to PRO",
                               style: TextStyle(
                                 color: Colors.white,
@@ -55,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                                 height: 1.6,
                               ),
                             ),
-                            content: Text(
+                            content: const Text(
                               "Upgrading your CloudSound account is an excellent way to take your music career to the next level.",
                               style: TextStyle(
                                 color: Colors.white,
@@ -98,7 +105,6 @@ class _MainScreenState extends State<MainScreen> {
                     Icons.notifications_outlined,
                     color: Colors.grey[600],
                   ),
-                  // SizedBox(width: 10.0),
                 ],
               ),
             ),
@@ -106,11 +112,14 @@ class _MainScreenState extends State<MainScreen> {
         ),
         backgroundColor: Colors.grey[900],
       ),
+
+      // Row yang didalamnya terdiri dari NavigationRail() dan body
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           NavigationRail(
             onDestinationSelected: (int index) {
+              // set _selectedIndex sesuai index data navigasi yang di klik
               setState(() {
                 _selectedIndex = index;
               });
@@ -152,6 +161,8 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           ),
+
+          //tampilkan body sesuai _body dari index _selectedIndex yang di pilih
           Expanded(
             child: IndexedStack(
               index: _selectedIndex,
